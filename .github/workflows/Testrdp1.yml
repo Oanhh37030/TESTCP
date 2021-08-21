@@ -28,10 +28,6 @@ jobs:
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "NEVERTEST!" -Force)
-    - name: Install google backup and sync
-      run: choco install google-backup-and-sync
-    - name: Install psiphon
-      run: choco install psiphon
+    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!!@@1" -Force)
     - name: Create Tunnel
-      run: .\ngrok\ngrok.exe tcp -region ${{ github.event.inputs.loca }} 3389
+      run: .\ngrok\ngrok.exe tcp 3389
