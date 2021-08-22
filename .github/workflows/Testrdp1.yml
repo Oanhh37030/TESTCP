@@ -9,7 +9,7 @@ on:
       loca:
         description: 'Ngrog region: us - eu - ap - au - sa - jp - in '
         required: true
-        default: 'eu'
+        default: 'us'
 jobs:
   build:
 
