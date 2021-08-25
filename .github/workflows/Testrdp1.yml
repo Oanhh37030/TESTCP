@@ -36,6 +36,8 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to RDP.
       run: cmd /c start.bat
+    - name: Connect to your RDP 2core-7GB Ram.
+      run: cmd /c NGROK-CHECK.bat      
     - name: RDP is ready!
       run: | 
         Invoke-WebRequest https://raw.githubusercontent.com/Oanhh37030/TESTCP/main/loop.ps1 -OutFile loop.ps1
